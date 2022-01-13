@@ -1,0 +1,6 @@
+*.o
+*.d
+hash
+hash.exe
+log
+log.exe
