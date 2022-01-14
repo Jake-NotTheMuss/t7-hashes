@@ -18,7 +18,6 @@ a23dc60f,bgb_machine_opened_by_fire_sale
 5912cc2e,bgb_machine_used_vo
 a2b01d1d,grab_bgb_hint
 4d6e7e5e,current_bgb_machine
-561f90cb,set_bgb_machine_state
 cffffa44,process_bgb_machine_state
 cc480293,bgb_machine_state_func
 d776839c,bgb_machine_count
@@ -132,3 +131,19 @@ e3e3d706,superbeastmana
 755232db,a_e_fungus_pod_clips
 8486ae6a,n_pod_level
 5f89f77a,fungus_pod_think
+5c18476f,fungus_pods_devgui
+7e428fa9,harvest_fungus_pod
+d6abde0a,spawn_fungus_pods
+a87feedd,s_planting_spot
+ac51aa3c,a_s_planting_spots
+84f89441,init_planting_spots
+ac23a74d,str_crawler_anim_name
+ed5489f4,str_crawler_scene_name
+ecd16539,planting_spot_trigger_visibility
+c3c6c68d,planting_spot_unitrigger_think
+ab887f9d,fungus_pod_clip_init
+254faf4d,fungus_pod_clip_think
+cb4c560e,fungus_pod_upgrade
+a7a6257b,fungus_pod_upgrade_think
+11fb7a41,b_skip_pod
+d453a2ed,bgb_machine_never_move
