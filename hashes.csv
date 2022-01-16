@@ -147,3 +147,12 @@ cb4c560e,fungus_pod_upgrade
 a7a6257b,fungus_pod_upgrade_think
 11fb7a41,b_skip_pod
 d453a2ed,bgb_machine_never_move
+f2a52ffa,s_plant
+c27b0ccb,s_plant_unitrigger
+a83adb54,str_reward
+76a58077,b_ee_planting_spot
+3940f450,b_is_spider
+36ffe1d1,achievement_complete_all_rituals
+fc2e6576,achievement_help_the_others
+ea06cc8c,achievement_spot_the_shadowman
+46ea87bb,achievement_zombie_store_kills
