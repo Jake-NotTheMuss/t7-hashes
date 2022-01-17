@@ -159,3 +159,17 @@ ea06cc8c,achievement_spot_the_shadowman
 ca233e7d,bgb_machine_lion_twitches
 6cb6a683,bgb_machine_max_uses_per_round
 17a48195,grab_bonus_points_player
+e94a4b1b,bgb_player_init
+71740755,b_is_active
+959ccfd0,init_weapon_cycling
+cb604665,custom_magicbox_host_migration
+49998a6e,custom_pandora_fx_func
+7c8b59c1,str_firesale_status
+1c9eb55c,magicbox_ambient_sound
+9b17c542,fx_obj_2
+ff453c39,s_challenges
+4687355c,challenge_1
+b88ea497,challenge_2
+928c2a2e,challenge_3
+ebb99c53,init_challenge_pillars
+92fc3c34,a_e_challenge_boards
