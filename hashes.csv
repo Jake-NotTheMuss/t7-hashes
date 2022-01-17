@@ -161,7 +161,6 @@ ca233e7d,bgb_machine_lion_twitches
 17a48195,grab_bonus_points_player
 e94a4b1b,bgb_player_init
 71740755,b_is_active
-959ccfd0,init_weapon_cycling
 cb604665,custom_magicbox_host_migration
 49998a6e,custom_pandora_fx_func
 7c8b59c1,str_firesale_status
