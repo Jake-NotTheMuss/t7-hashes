@@ -345,3 +345,6 @@ dd96a64a,zm_frontend_zm_bgb_chance
 6325754,bgb_slots_devgui_think
 62ee46fa,n_bgb_token_spend_count
 7596e14e,bgb_slots_roll
+945c54c5,logPlayerMapNotification
+bea1c67c,logObjectiveStatusChange
+932b0331,destructible_ent
