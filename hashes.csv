@@ -450,3 +450,7 @@ dec3df0b,bgb_machine_bulb_solid_away
 5c057e0d,light_interior_piece
 d0281a17,bgb_machine_bulb_flash_selected_bgb
 58d675a8,halo_piece
+c5fc654e,dimensions0
+ebfedfb7,dimensions1
+ae867510,push_out_threshold
+b018f2a7,init_push_out_threshold
