@@ -188,7 +188,6 @@ ecd296a1,initastrobehaviorsandasm
 b783ed6b,quadnotetrackmeleefire
 57e144e9,monkeynotetrackmeleefire
 f7725aa8,monkeynotetrackgroundpound
-11b12c90,archetypeastroonanimscriptedcallback
 c0afbdaf,zm_ai_astro
 1dd16458,astrotraversestart
 da0d7bfb,astrotraverseend
@@ -280,7 +279,6 @@ e7616d2f,zombie_devgui_validation_commands
 d6624f9e,zombie_devgui_player_menu
 a9df7ce0,zombie_devgui_player_menu_clear
 503d8fb1,zombie_devgui_player_menu_clear_on_disconnect
-e7616d2f,zombie_devgui_validation_commands
 5735dbec,zombie_spawner_validation
 c0d235a5,toggle_zone_adjacencies_validation
 d02d5c2a,zone_adjacencies_validation
@@ -347,7 +345,6 @@ dd96a64a,zm_frontend_zm_bgb_chance
 bea1c67c,logobjectivestatuschange
 932b0331,destructible_ent
 54b2ecf8,zombie_devgui_take_perks
-e14e8c13,zombie_devgui_give_xp
 1e20cc53,zombie_devgui_give_qed
 64c58d19,zombie_devgui_give_bhb
 25ef5fab,w_beacon
@@ -454,3 +451,4 @@ c5fc654e,dimensions0
 ebfedfb7,dimensions1
 ae867510,push_out_threshold
 b018f2a7,init_push_out_threshold
+d8064278,zombie_devgui_repack_current_weapon
