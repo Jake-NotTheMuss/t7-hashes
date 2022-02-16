@@ -452,3 +452,7 @@ ebfedfb7,dimensions1
 ae867510,push_out_threshold
 b018f2a7,init_push_out_threshold
 d8064278,zombie_devgui_repack_current_weapon
+e4084aab,entity_damage_thread
+ce7032d4,n_radio_index
+39ac3091,ww_grenade_devgui
+dcedd7b5,ww_grenade_devgui_callback
