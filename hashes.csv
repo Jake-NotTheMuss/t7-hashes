@@ -456,3 +456,14 @@ e4084aab,entity_damage_thread
 ce7032d4,n_radio_index
 39ac3091,ww_grenade_devgui
 dcedd7b5,ww_grenade_devgui_callback
+32692a60,bgb_token_give_to_player
+c17bb43c,a_challenge_1
+33832377,a_challenge_2
+d80a90e,a_challenge_3
+343b3db7,init_challenge_boards
+970609e0,init_challenges
+3e1001b,str_challenge_info
+ca877c33,n_electric_trap_kills
+11e81afa,n_flogger_trap_kills
+98ea05,beam_killed_zombie
+16ba3a1e,challenges_devgui_callback

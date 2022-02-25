@@ -5,3 +5,5 @@ hash outputs the hash value for any strings passed in, for example './hash playe
 log writes any strings passed as arguments and their hashes to the file 'hashes.csv', for example './log player_connected_time timeplayerconnected'.
 
 hashes.csv contains some strings that match hash values seen in the decompiled T7 scripts.
+
+hashes_augmented.csv contains hashes for augmented variables (variables generated in foreach loops when a key variable is not specified).
