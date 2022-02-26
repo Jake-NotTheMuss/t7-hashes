@@ -467,3 +467,7 @@ ca877c33,n_electric_trap_kills
 11e81afa,n_flogger_trap_kills
 98ea05,beam_killed_zombie
 16ba3a1e,challenges_devgui_callback
+4922937f,is_bgb_token_in_use
+ce9d31c4,target_percent
+2d75b98d,bgb_token_percent_chance
+a73c4888,bgb_token_max_per_game
