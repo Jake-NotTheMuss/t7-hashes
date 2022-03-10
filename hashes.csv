@@ -555,7 +555,6 @@ bbae1203,turn_on_warning_lights
 d31a2386,get_warning_lights_closest
 d91e5529,turn_off_warning_lights
 fa1ca319,a_close_lights
-d46dfa88,play_warning_lights_in_footprints_fx
 8f93a98e,foot_origin
 ee5c27b3,stop_giant_robot_rumble_and_shake
 61cbe98c,e_church_ceiling
