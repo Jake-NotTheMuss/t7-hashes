@@ -577,3 +577,9 @@ e0c0cb69,genesis_zombie_spawned
 1108488e,genesis_traversal_speed_boost
 a3d40b8,island_name
 d19cb2f8,startzmbspawnersoundloops
+b05d27ad,zod_select_zombie_spawner
+4353b980,castle_select_zombie_spawner
+59804866,zod_get_zombie_spawn_delay
+5ee4c46c,zod_get_delay_between_rounds
+f88e4c70,zod_wasp_spawn_callback
+2c092767,zod_custom_spawn_location_selection
