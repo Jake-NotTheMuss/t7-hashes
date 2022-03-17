@@ -583,3 +583,4 @@ b05d27ad,zod_select_zombie_spawner
 5ee4c46c,zod_get_delay_between_rounds
 f88e4c70,zod_wasp_spawn_callback
 2c092767,zod_custom_spawn_location_selection
+6c7a96b4,bgb_machine_calc_player_cost
