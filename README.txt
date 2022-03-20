@@ -7,3 +7,5 @@ log writes any strings passed as arguments and their hashes to the file 'hashes.
 hashes.csv contains some strings that match hash values seen in the decompiled T7 scripts.
 
 hashes_augmented.csv contains hashes for augmented variables (variables generated in foreach loops when a key variable is not specified).
+
+hashes_strings.csv contains hashes of strings using the sys::hashstring() function at compile-time (e.g. #"on_player_connect").
