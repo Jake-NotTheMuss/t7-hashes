@@ -661,3 +661,11 @@ db3e7a5c,dividers1
 4d45e997,dividers2
 c0fc6584,waitandprocessvehicledamagedcallback
 3d088ac6,b_has_spark
+8acd43fd,setcollectiblenoncheckpointvalue
+5c0b5b64,collectible_index
+70b41d41,getcollectiblenoncheckpointvalue
+d100c544,clearallcollectiblenoncheckpointdata
+a8d8b9c7,update_player_collectible_completion_status
+8a9d11b,numcollectiblescollected
+a34073af,collectibleindex
+b95ead22,collectiblecount
