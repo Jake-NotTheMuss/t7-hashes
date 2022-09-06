@@ -724,3 +724,10 @@ fabadf47,vehicle_update_cybercom_defense
 8967863e,allowedstate
 edae084d,buildcollectiblesstring
 b918cb9,buildcybercomusagestring
+502f946b,vo_stop
+eca8128e,b_dont_speak
+bcf7d3ea,vo_keepers_arrive
+658d89a3,vo_ritual_start
+edca6dc9,vo_ritual_pap_succeed
+7e398d3,margwa_headshot_vo
+c11b8117,margwa_dead_vo
