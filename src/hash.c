@@ -1,16 +1,21 @@
-
 #include <stdio.h>
-#include <stdint.h>
+#include <stdlib.h>
 
 #include "hash.h"
 
-int main(int argc, const char **argv)
+int
+main(int argc, char **argv)
 {
   int i;
-  for (i = 1; i < argc; i++) {
-    uint32_t hash = hash_t7(argv[i]);
-    printf("%s: %x\n", argv[i], hash);
+  int usefnv = 1;
+  hashval_t (*hash_f)(const char *);
+
+  PARSE_OPTIONS;
+
+  for (; i < argc; i++) {
+    hashval_t hash = (*hash_f)(argv[i]);
+    printf("%s:%x\n", argv[i], hash);
   }
 
-  return 0;
+  return EXIT_SUCCESS;
 }

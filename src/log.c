@@ -1,27 +1,40 @@
-
 #include <stdio.h>
-#include <stdint.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 #include "hash.h"
 
-char g_hashtable_name[] = "hashes.csv";
+#define FNVFILENAME     "hashes.csv"
+#define STRINGFILENAME  "hashes_strings.csv"
 
-int main(int argc, const char **argv)
+int
+main(int argc, char **argv)
 {
   int i;
+  int usefnv = 1;
+  hashval_t (*hash_f)(const char *);
   FILE *f;
 
-  if ( !(f = fopen(g_hashtable_name, "a")) ) {
-    fprintf(stderr, "Could not open file `%s` for logging.\n",
-      g_hashtable_name);
-    return 1;
+  PARSE_OPTIONS;
+
+  {
+    char *filename = usefnv ?
+          FNVFILENAME : STRINGFILENAME;
+    if (!(f = fopen(filename, "a")))
+    {
+      fprintf(stderr,
+       "cannot not open file `%s'\n",
+       filename);
+      return EXIT_FAILURE;
+    }
   }
 
-  for (i = 1; i < argc; i++) {
-    uint32_t hash = hash_t7(argv[i]);
+  for (; i < argc; i++) {
+    make_lower(argv[i]);
+    hashval_t hash = (*hash_f)(argv[i]);
     fprintf(f, "%x,%s\n", hash, argv[i]);
   }
 
   fclose(f);
-  return 0;
+  return EXIT_SUCCESS;
 }

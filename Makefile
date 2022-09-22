@@ -1,32 +1,20 @@
-
-common_src:=
-
-hasher_src:=src/hash.c $(common_src)
-logger_src:=src/log.c $(common_src)
-
-hasher_obj:=$(hasher_src:%.c=%.o)
-logger_obj:=$(logger_src:%.c=%.o)
-
-objects:=$(hasher_obj) $(logger_obj)
-
-deps:=$(hasher_src:%.c=%.d) $(logger_src:%.c=%.d)
+srcdir=src
+headers=$(srcdir)/hash.h
 
 .PHONY: all clean
-
 all: hash log
 
-hash: $(hasher_obj)
-	$(CC) -o $@ $^
+hash: $(srcdir)/hash.o
+	$(CC) -o $@ $<
 
-log: $(logger_obj)
-	$(CC) -o $@ $^
+log: $(srcdir)/log.o
+	$(CC) -o $@ $<
 
-$(objects): %.o: %.c %.d
-	$(CC) -MT $@ -MMD -MP -MF $*.d -c $< -o $@
+$(srcdir)/hash.o: $(srcdir)/hash.c $(headers)
+	$(CC) -c $< -o $@
 
-$(deps):
+$(srcdir)/log.o: $(srcdir)/log.c $(headers)
+	$(CC) -c $< -o $@
 
 clean:
-	rm -f hash log $(objects) $(deps)
-
-include $(wildcard $(deps))
+	rm -f hash log $(srcdir)/hash.o $(srcdir)/log.o

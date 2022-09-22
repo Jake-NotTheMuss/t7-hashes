@@ -1,11 +1,16 @@
 A repository for keeping track of hashes in T7 scripts.
 
-src/ directory contains 2 programs, hash and log:
-hash outputs the hash value for any strings passed in, for example './hash player_connected_time playerconnectedtime time_player_connected timeplayerconnected'
-log writes any strings passed as arguments and their hashes to the file 'hashes.csv', for example './log player_connected_time timeplayerconnected'.
+The `src/' subdirectory contains 2 programs: `hash.c' and `log.c'.
 
-hashes.csv contains some strings that match hash values seen in the decompiled T7 scripts.
+`hash.c' outputs the FNV1A hash value for each string argument passed to
+it.
 
-hashes_augmented.csv contains hashes for augmented variables (variables generated in foreach loops when a key variable is not specified).
+`log.c' writes each string argument and their respective FNV1A hash
+values to the file `hashes.csv'.
 
-hashes_strings.csv contains hashes of strings using the sys::hashstring() function at compile-time (e.g. #"on_player_connect").
+`hashes_augmented.csv' contains hashes for augmented variables
+(variables generated in foreach loops when a key variable is not
+specified).
+
+`hashes_strings.csv' contains hashes of strings using the
+sys::hashstring() function at compile-time (e.g. #"on_player_connect").

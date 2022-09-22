@@ -1,6 +1,4 @@
 *.o
-*.d
+*.exe
 hash
-hash.exe
 log
-log.exe
