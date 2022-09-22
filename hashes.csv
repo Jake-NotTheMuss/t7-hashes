@@ -704,7 +704,6 @@ eb5cc7bc,picked_up_collectible
 cacb0169,accolade_string
 fdcc76d1,accolade_string_complete
 ebb087c2,a_accolades
-85ec34dc,callback_decoration_awarded
 346332b8,checkpointused
 25328f50,playerhasdecoration
 55dddb3a,silverback_spawner
@@ -731,3 +730,7 @@ bcf7d3ea,vo_keepers_arrive
 edca6dc9,vo_ritual_pap_succeed
 7e398d3,margwa_headshot_vo
 c11b8117,margwa_dead_vo
+f3127c4f,shield_devgui
+b6937313,shield_devgui_callback
+7c89cfee,n_bgb_gained
+b882d9ef,bgb_gained
