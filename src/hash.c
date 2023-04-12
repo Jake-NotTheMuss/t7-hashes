@@ -1,21 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define PROG_HASH_C
+
 #include "hash.h"
 
 int
 main(int argc, char **argv)
 {
-  int i;
-  int usefnv = 1;
-  hashval_t (*hash_f)(const char *);
-
+  COMMON_DECLS;
   PARSE_OPTIONS;
-
   for (; i < argc; i++) {
-    hashval_t hash = (*hash_f)(argv[i]);
-    printf("%s:%x\n", argv[i], hash);
+    PRINT_HASH(stdout, argv[i], (*hash_f)(argv[i]));
   }
-
   return EXIT_SUCCESS;
 }

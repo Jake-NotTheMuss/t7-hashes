@@ -14,3 +14,6 @@ specified).
 
 `hashes_strings.csv' contains hashes of strings using the
 sys::hashstring() function at compile-time (e.g. #"on_player_connect").
+
+`hashes_ud.csv' contains hashes of campaign cheatcodes using the same
+hash function as `Engine.UserData'
