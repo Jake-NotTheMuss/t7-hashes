@@ -1,3 +1,8 @@
+/*
+** cheatcodeforcer.c
+** Black Ops 3 campaign cheat-code brute forcer
+*/
+
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
@@ -17,78 +22,48 @@
 #define HASH64 unsigned long
 #define HASH64_FMT "%lx"
 #define H64(x) x##lu
+#define STR2H64(s,p,n) strtoul(s,p,n)
 #elif defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
 #define HASH64 unsigned long long
 #define HASH64_FMT "%llx"
 #define H64(x) x##llu
+#define STR2H64(s,p,n) strtoull(s,p,n)
 #else
 #error no 64-bit type found
 #endif
 
-typedef HASH32 hashval32_t;
-typedef HASH64 hashval64_t;
+#include "xxhash.h"
 
-hashval64_t hash_userdata(const char *str, size_t len, hashval64_t offset)
+static HASH64 hashud(char *s, size_t len)
 {
-  const hashval64_t *p = (const hashval64_t *)str;
-  const char *pc;
-  const hashval64_t *limit = (const hashval64_t *)(str + len);
-  hashval64_t hash = (hashval64_t)len;
-  hashval64_t v8 = offset + H64(0x27D4EB2F165667C5);
-  hash = v8 + hash;
-  while (p + 1 <= limit) {
-    hashval64_t c = *p;
-    hash = hash ^ (c * H64(0x93EA75A780000000) | (c * H64(0xC2B2AE3D27D4EB4F)) >> 33) *
-    H64(0x9E3779B185EBCA87);
-    hash = (hash << 27 | hash >> 37) * H64(0x9E3779B185EBCA87) + H64(0x85EBCA77C2B2AE63);
-    p++;
-  }
-  if (((hashval64_t *)((hashval32_t *)p + 1)) <= limit) {
-    hashval64_t c = ((hashval64_t)(*(hashval32_t *)p));
-    hash = hash ^ c * H64(0x9E3779B185EBCA87);
-    hash = (hash << 23 | hash >> 41) * H64(0xC2B2AE3D27D4EB4F) + H64(0x165667B19E3779F9);
-    p = (hashval64_t *)((hashval32_t *)p + 1);
-  }
-  for (; p < limit; p = (hashval64_t *)((char *)p + 1)) {
-    hashval64_t c = ((hashval64_t)(*(char *)p));
-    hash = hash ^ c * H64(0x27D4EB2F165667C5);
-    hash = (hash << 11 | hash >> 53) * H64(0x9E3779B185EBCA87);
-  }
-  hash = (hash >> 33 ^ hash) * H64(0xC2B2AE3D27D4EB4F);
-  hash = (hash >> 29 ^ hash) * H64(0x165667B19E3779F9);
-  return hash >> 32 ^ hash;
-}
-
-static hashval64_t hashud(char *s, size_t len)
-{
-  return hash_userdata(s, len, H64(0x6CDFB2E4013EB3F3));
+  return (HASH64)XXH64(s, len, H64(0x6CDFB2E4013EB3F3));
 }
 
 
 #define MAXBUFF 10
 
 static char buff[MAXBUFF+1];
+static HASH64 hashtofind;
 
-void step(char *pos, char *lim)
+void step(char *const pos, char *const lim)
 {
   size_t len = (size_t)(lim-buff);
   int c;
-  if (pos == lim) {
-    *pos = '\0';
-    return;
-  }
   for (c = 'A'; c <= 'Z'; c++) {
-    hashval64_t result;
+    HASH64 result;
     *pos = c;
-    step(pos+1,lim);
+    if (pos+1 != lim) {
+      step(pos+1,lim);
+      continue;
+    }
     result = hashud(buff, len);
-    if (result == H64(0xe242980a0f0968a3)) {
+    if (result == hashtofind) {
       printf("%s --> " HASH64_FMT "\n", buff, result);
       exit(0);
     }
-    /*puts(buff);*/
   }
 }
+
 
 /* MANIFEST */
 /* DREAMLAND - removed */
@@ -102,13 +77,22 @@ int main(int argc, char **argv)
 {
   int i;
   char *lim;
+  char *endptr;
+  if (argc < 1)
+    return 1;
+  if (argc < 2) {
+    printf("usage: %s [HASH in base 16]\n", argv[0]);
+    return 1;
+  }
+  hashtofind = (HASH64)STR2H64(argv[1], &endptr, 16);
+  if (*endptr != '\0')
+    return 1;
   for (i = 0; i < MAXBUFF; i++) {
     lim = &buff[i+1];
     step(&buff[0],lim);
     printf("step %d complete\n", i+1);
   }
 
-  (void)argc; (void)argv;
   return 0;
 }
 

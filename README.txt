@@ -15,5 +15,6 @@ specified).
 `hashes_strings.csv' contains hashes of strings using the
 sys::hashstring() function at compile-time (e.g. #"on_player_connect").
 
-`hashes_ud.csv' contains hashes of campaign cheatcodes using the same
-hash function as `Engine.UserData'
+`hashes_ud.csv' contains hashes of campaign cheatcodes using the xxHash
+algorithm. `ud' stands for `UserData', which is the name of the C
+function in Lua that is used to process cheatcodes typed in by the user.

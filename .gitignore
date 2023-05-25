@@ -2,3 +2,6 @@
 *.exe
 hash
 log
+cheatcodeforcer
+src/xxhash.c
+src/xxhash.h

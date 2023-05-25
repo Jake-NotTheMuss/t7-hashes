@@ -1,0 +1,13 @@
+#!/bin/sh
+
+dir=https://raw.githubusercontent.com/Cyan4973/xxHash
+
+# this commit is close to the version that Black Ops 3 uses but it is also
+# C90-compatible
+commit=cb1963919959fdb43dd0fd96cad84901c01beeb8
+
+
+for f in xxhash.c xxhash.h; do
+	echo "curl $dir/$commit/$f > $f"
+	curl $dir/$commit/$f > $f || exit
+done

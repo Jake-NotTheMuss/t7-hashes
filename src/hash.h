@@ -167,37 +167,6 @@ t7_hashstring(const char *str)
   return (hashval64_t)HS_FINISH(hash);
 }
 
-static hashval64_t
-hash_userdata(const char *str, size_t len, hashval64_t offset)
-{
-  const hashval64_t *p = (const hashval64_t *)str;
-  const char *pc;
-  const hashval64_t *limit = (const hashval64_t *)(str + len);
-  hashval64_t hash = (hashval64_t)len;
-  hashval64_t v8 = offset + H64(0x27D4EB2F165667C5);
-  hash = v8 + hash;
-  while (p + 1 <= limit) {
-    hashval64_t c = *p;
-    hash = hash ^ (c * H64(0x93EA75A780000000) | (c * H64(0xC2B2AE3D27D4EB4F)) >> 33) *
-    H64(0x9E3779B185EBCA87);
-    hash = (hash << 27 | hash >> 37) * H64(0x9E3779B185EBCA87) + H64(0x85EBCA77C2B2AE63);
-    p++;
-  }
-  if (((hashval64_t *)((hashval32_t *)p + 1)) <= limit) {
-    hashval64_t c = ((hashval64_t)(*(hashval32_t *)p));
-    hash = hash ^ c * H64(0x9E3779B185EBCA87);
-    hash = (hash << 23 | hash >> 41) * H64(0xC2B2AE3D27D4EB4F) + H64(0x165667B19E3779F9);
-    p = (hashval64_t *)((hashval32_t *)p + 1);
-  }
-  for (; p < limit; p = (hashval64_t *)((char *)p + 1)) {
-    hashval64_t c = ((hashval64_t)(*(char *)p));
-    hash = hash ^ c * H64(0x27D4EB2F165667C5);
-    hash = (hash << 11 | hash >> 53) * H64(0x9E3779B185EBCA87);
-  }
-  hash = (hash >> 33 ^ hash) * H64(0xC2B2AE3D27D4EB4F);
-  hash = (hash >> 29 ^ hash) * H64(0x165667B19E3779F9);
-  return hash >> 32 ^ hash;
-}
 
 void make_upper(char *str)
 {
@@ -208,11 +177,13 @@ void make_upper(char *str)
   }
 }
 
+#include "xxhash.h"
+
 static hashval64_t t7_hashuserdata(const char *str)
 {
   size_t len = strlen(str);
   make_upper((char *)str);
-  return hash_userdata(str, len, H64(0x6CDFB2E4013EB3F3));
+  return (hashval64_t)XXH64(str, len, H64(0x6CDFB2E4013EB3F3));
 }
 
 /************************************************************************/
@@ -259,6 +230,7 @@ static hashval64_t t7_hashuserdata(const char *str)
           case 's':               \
             usefnv = 0; break;    \
           case 'u':               \
+          case 'x':               \
             usefnv = 0;           \
             hashuserdata = 1;     \
             break;                \
