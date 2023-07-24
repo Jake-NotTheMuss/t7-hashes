@@ -17,7 +17,7 @@ $(srcdir)/hash.o: $(srcdir)/hash.c $(headers)
 	$(CC) -c $(srcdir)/hash.c -o $@
 
 $(srcdir)/log.o: $(srcdir)/log.c $(headers)
-	$(CC) -c $(srcdir)/hash.c -o $@
+	$(CC) -c $(srcdir)/log.c -o $@
 
 $(srcdir)/cheatcodeforcer.o: $(srcdir)/xxhash.c $(srcdir)/xxhash.h
 	$(CC) -c $(srcdir)/cheatcodeforcer.c -o $@
