@@ -736,3 +736,5 @@ b6937313,shield_devgui_callback
 b882d9ef,bgb_gained
 4b34a5fc,kd_denom
 1a60ad71,b_flash_screen
+3232aae6,n_bgb_available_at_start
+e0b06b47,bgb_available_at_start
