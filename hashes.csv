@@ -738,3 +738,10 @@ b882d9ef,bgb_gained
 1a60ad71,b_flash_screen
 3232aae6,n_bgb_available_at_start
 e0b06b47,bgb_available_at_start
+4e5a7cb5,prev_player_out_of_playable_area_monitor_callback
+4d3ce43f,e_city_map
+1fb56ce6,a_e_city_maps
+d2fb40be,s_random_perk_loc
+965632d6,n_scriptid
+8b9e6756,get_sonic_spawners
+5af423f4,activate_quad_spawners
