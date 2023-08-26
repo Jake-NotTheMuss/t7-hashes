@@ -745,3 +745,13 @@ d2fb40be,s_random_perk_loc
 965632d6,n_scriptid
 8b9e6756,get_sonic_spawners
 5af423f4,activate_quad_spawners
+1ebbce9b,get_sonic_locations
+d34b0574,dragon_hazard_init
+357a65b,mdl_dragon_hazard
+6ac13208,play_vomit_fx
+93eb638b,e_powerup
+434235f9,powerup_stolen_by_sam
+7ca0e2a7,invulnerable_during_activation
+4cda71bf,register_invulnerable_during_activation
+50fe45f6,is_cancellable
+2060b89,register_cancellable
