@@ -1063,3 +1063,9 @@ fda270a4,n_spider_health
 123b370a,spider_round_stop
 9f7a20d2,spider_round_start
 dd20bf74,a_spider_web_visual
+5f982950,str_console
+cc373138,mdl_console
+3db2a27f,mdl_console_other
+fbb61447,str_console_other
+b1c60ae7,a_str_console_other
+5503da8a,mdl_antenna
